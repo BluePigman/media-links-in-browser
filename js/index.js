@@ -22,6 +22,25 @@ function startFromUrl() {
         video.src = url;
         console.log(url);
     }
+    if (url.includes("i.vsco.co/")){
+        console.log(url);
+        (async () => {
+            const res = await fetch(url)
+            const blob = await res.blob()
+            const img = new Image()
+            img.src = URL.createObjectURL(blob)
+          
+            // newer promise based version of img.onload
+            await img.decode()
+            
+            document.body.append(img)
+          
+            // Don't forget to revoke the blob url when 
+            // you no longer need it (to release memory)
+            URL.revokeObjectURL(img.src)
+          })()
+          
+    }
 }
     
 

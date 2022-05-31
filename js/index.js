@@ -5,7 +5,7 @@ var inputField = document.getElementById("url");
 var video = document.getElementById("video");
 
 inputField.addEventListener("keyup", function(event) {
-    if (event.keyCode === 13){
+    if (event.code === "Enter"){
         startFromInput();
     }
 });

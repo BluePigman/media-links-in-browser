@@ -14,8 +14,16 @@ inputField.addEventListener("keyup", function(event) {
 function startFromUrl() {
     let url = window.location.href.replace(new RegExp(regex,"g"), '');
     inputField.value = url;
-    video.src = url;
+    if (url.endsWith(".jpg")){
+        image.src = url;
+        console.log(url);
+    }
+    if (url.endsWith(".mp4")){
+        video.src = url;
+        console.log(url);
+    }
 }
+    
 
 function startFromInput(){
     window.location.href = thisSite + "?" + inputField.value;

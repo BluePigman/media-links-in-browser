@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1> View video/audio url in browser </h1>
+        <h1> View Image/video/audio url in browser </h1>
         <div id="content">
             <div id="input">
                 <table>
@@ -18,14 +18,16 @@
                 </table>
                 <button onclick="startFromInput()">Start</button>
             </div>
+            
+            <div>
+                <img id="image" src="data:...">
+            </div>
+            
             <div>
                 <video id="video" width="500" height="400" controls>
                     <source src="">
                     Something went wrong.
                 </video>
-            </div>
-            <div>
-                <img id="image" src="data:...">
             </div>
         </div>    
         <script src="js/index.js"></script>

@@ -14,7 +14,17 @@ inputField.addEventListener("keyup", function(event) {
 function startFromUrl() {
     let url = window.location.href.replace(new RegExp(regex,"g"), '');
     inputField.value = url;
-    if (url.endsWith(".jpg")){
+    if (url.includes("cdn.discordapp.com/attachments/")){
+        if (/.mp4|.mp3|.webm|.wav|.ogg$/.test(url)){
+            video.src = url;
+            console.log(url);
+        }
+        else if (/.jpg|.jpeg|.JPG|.JPEG|.png|.PNG$/.test(url)){
+            image.src = url;
+            console.log(url);
+        }
+    }
+    if (/.gif|.svg|.bmp|.webp$/.test(url)){
         image.src = url;
         console.log(url);
     }
@@ -25,22 +35,10 @@ function startFromUrl() {
     if (url.includes("i.vsco.co/")){
         console.log(url);
         image.src = url;
-        // (async () => {
-        //     const res = await fetch(url)
-        //     const blob = await res.blob()
-        //     const img = new Image()
-        //     img.src = URL.createObjectURL(blob)
-          
-        //     // newer promise based version of img.onload
-        //     await img.decode()
-            
-        //     document.body.append(img)
-          
-        //     // Don't forget to revoke the blob url when 
-        //     // you no longer need it (to release memory)
-        //     URL.revokeObjectURL(img.src)
-        //   })()
-          
+    }
+    if (url.includes("cdn.betterttv.net/emote/") || url.includes("cdn.frankerfacez.com/emote/") || url.includes("cdn.7tv.app/emote/")){
+        console.log(url);
+        image.src = url;
     }
 }
     

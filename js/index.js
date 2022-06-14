@@ -36,6 +36,10 @@ function startFromUrl() {
         console.log(url);
         image.src = url;
     }
+    if (url.includes("im.vsco.co/")){
+        console.log(url);
+        image.src = url;
+    }
     if (url.includes("cdn.betterttv.net/emote/") || url.includes("cdn.frankerfacez.com/emote/") || url.includes("cdn.7tv.app/emote/")){
         console.log(url);
         image.src = url;

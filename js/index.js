@@ -30,15 +30,7 @@ function startFromUrl() {
     video.src = url;
     console.log(url);
   }
-  if (url.includes("i.vsco.co/")) {
-    console.log(url);
-    image.src = url;
-  }
-  if (url.includes("im.vsco.co/")) {
-    console.log(url);
-    image.src = url;
-  }
-  if (url.includes("image-aws-us-west-2.vsco.co/")) {
+  if (url.includes("i.vsco.co/" || "im.vsco.co/" ||  "img.vsco.co" || "image-aws-us-west-2.vsco.co/")) {
     console.log(url);
     image.src = url;
   }

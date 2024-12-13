@@ -13,32 +13,13 @@ inputField.addEventListener("keyup", function (event) {
 function startFromUrl() {
   let url = window.location.href.replace(new RegExp(regex, "g"), "");
   inputField.value = url;
-  if (url.includes("cdn.discordapp.com/attachments/")) {
-    if (/.mp4|.mp3|.webm|.wav|.ogg$/.test(url)) {
-      video.src = url;
-      console.log(url);
-    } else if (/.jpg|.jpeg|.JPG|.JPEG|.png|.PNG$/.test(url)) {
-      image.src = url;
-      console.log(url);
-    }
-  }
-  if (/.gif|.svg|.bmp|.webp$/.test(url)) {
-    image.src = url;
-    console.log(url);
-  }
-  if (url.endsWith(".mp4")) {
+  
+  if (/.mp4|.mp3|.webm|.wav|.ogg$/.test(url)) {
     video.src = url;
     console.log(url);
   }
-  if (url.includes("i.vsco.co/" || "im.vsco.co/" ||  "img.vsco.co" || "image-aws-us-west-2.vsco.co/")) {
-    console.log(url);
-    image.src = url;
-  }
-  if (
-    url.includes("cdn.betterttv.net/emote/") ||
-    url.includes("cdn.frankerfacez.com/emote/") ||
-    url.includes("cdn.7tv.app/emote/")
-  ) {
+  
+  else {
     console.log(url);
     image.src = url;
   }

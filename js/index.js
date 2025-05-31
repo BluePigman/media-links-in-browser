@@ -14,7 +14,7 @@ function startFromUrl() {
   let url = window.location.href.replace(new RegExp(regex, "g"), "");
   inputField.value = url;
   
-  if (/.mp4|.mp3|.webm|.wav|.ogg$/.test(url)) {
+  if (/\.(mp4|mp3|webm|wav|ogg|mov)(\?.*)?$/i.test(url)) {
     video.src = url;
     console.log(url);
   }
